@@ -1,131 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sirija Boinapally | Portfolio</title>
-<style>
-:root{
-  --bg:#090d16; --panel:#151c28; --panel2:#111722; --text:#e8eaf0;
-  --muted:#98a1b3; --accent:#f5b642; --green:#83c5a3; --border:#222c3b;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;
-  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-  background-size:28px 28px;
-}
-nav{
-  position:sticky;top:0;z-index:10;height:58px;background:rgba(9,13,22,.96);
-  border-bottom:1px solid var(--border);display:flex;align-items:center;
-  gap:28px;padding:0 7%;font-size:12px;
-}
-.logo{color:#b9c0cf;margin-right:auto}.dot{color:var(--accent)}
-nav a{color:#aeb6c5;text-decoration:none;padding:20px 4px}
-nav a:hover{color:var(--accent);border-bottom:2px solid var(--accent)}
-section{min-height:100vh;padding:75px 10%;display:flex;flex-direction:column;justify-content:center}
-.terminal,.about-box,.project-card{
-  background:linear-gradient(145deg,var(--panel),var(--panel2));
-  border:1px solid var(--border);border-radius:10px;
-  box-shadow:0 15px 45px rgba(0,0,0,.22);
-}
-.hero{align-items:center;text-align:left}
-.terminal{width:min(720px,100%);padding:0 22px 25px;margin-bottom:32px}
-.terminal-bar{height:34px;margin:0 -22px 22px;padding:9px 12px;border-bottom:1px solid var(--border);color:#7d8798;font-size:11px}
-.lights{color:#e78573;letter-spacing:4px}
-.cmd{color:#d5dae4}.green{color:var(--green)}
-h1{font-size:clamp(2.5rem,6vw,4.5rem);margin:10px 0;font-weight:800;letter-spacing:-3px}
-.tagline{color:var(--muted);font-family:Arial,sans-serif}.highlight{color:var(--accent)}
-.btn{
-  display:inline-block;margin-top:18px;padding:13px 20px;border-radius:7px;
-  background:var(--accent);color:#17130a;text-decoration:none;font-weight:bold;font-size:12px
-}
-.btn.alt{background:transparent;color:#d9deea;border:1px solid #30394a;margin-left:8px}
-.heading{color:#aeb6c5;font-size:14px;margin-bottom:22px}.num{color:var(--accent)}
-.about-box{max-width:720px;padding:25px;line-height:1.75;color:#b4bcc9;font-size:12px}
-.about-box b{color:#dfe4ec}.about-box .green{display:block}
-.skills{display:flex;flex-wrap:wrap;gap:10px;max-width:800px}
-.skill{padding:12px 17px;border:1px solid var(--border);background:var(--panel);border-radius:7px;color:#cbd2dd;font-size:12px}
-.project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.project-card{padding:22px;min-height:220px;display:flex;flex-direction:column}
-.project-card h3{margin:0 0 12px;font-size:17px;color:#f0f2f6}
-.project-card p{color:var(--muted);font-family:Arial,sans-serif;font-size:13px;line-height:1.6;flex:1}
-.project-links a{font-size:11px;margin-right:12px;color:var(--accent);text-decoration:none}
-.project-links a:hover{text-decoration:underline}
-.contact{text-align:center;align-items:center}
-.contact h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:8px}
-footer{padding:25px;text-align:center;color:#6f7888;font-size:11px;border-top:1px solid var(--border)}
-@media(max-width:600px){nav{gap:13px;padding:0 4%;overflow-x:auto}.logo{display:none}section{padding:65px 7%}h1{letter-spacing:-2px}}
-</style>
-</head>
-<body>
-<nav>
-  <span class="logo"><span class="dot">●</span> ~/portfolio</span>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Sirija Boinapally — AI/ML student and developer building practical AI and full-stack applications." />
+    <meta property="og:title" content="Sirija Boinapally | AI/ML & Full-Stack Developer" />
+    <meta property="og:description" content="Explore Sirija's projects, skills, experience and achievements." />
+    <title>Sirija Boinapally | Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div class="progress" id="progress"></div>
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Sirija home">S<span>.</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+        <div class="nav-links" id="navLinks">
+          <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+          <a href="#experience">Experience</a><a href="#achievements">Achievements</a><a href="#contact" class="nav-cta">Let's connect ↗</a>
+        </div>
+      </nav>
+    </header>
 
-<section class="hero" id="home">
-  <div class="terminal">
-    <div class="terminal-bar"><span class="lights">● ● ●</span> &nbsp; guest@portfolio: ~</div>
-    <div class="cmd">guest@portfolio:~$ Who is Sirija?<span class="highlight">_</span></div><br>
-    <div class="green">✓ Sirija Boinapally</div>
-    <div class="green">✓ AI/ML student passionate about technology</div>
-    <div class="green">✓ Learning, building, and growing through real projects</div>
-  </div>
-  <div>
-    <h1>Sirija Boinapally</h1>
-    <p class="tagline">AI/ML Student — <span class="highlight">Turning ideas into intelligent solutions.</span></p>
-    <a class="btn" href="#projects">View projects</a>
-    <a class="btn alt" href="#contact">Get in touch</a>
-  </div>
-</section>
+    <main>
+      <section class="hero wrap section" id="home">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse"></span> B.Tech AIML Student · Hyderabad, India</div>
+          <p class="hero-kicker">HELLO, I'M</p>
+          <h1>Sirija <span class="gradient-text">Boinapally.</span></h1>
+          <h2>Building useful things with <span id="typedWord">AI</span><span class="cursor">|</span></h2>
+          <p class="hero-description">I’m an Artificial Intelligence and Machine Learning student who enjoys turning ideas into practical applications. I explore AI, machine learning and full-stack development by building projects and learning through hands-on experience.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projects">Explore my work <span>↗</span></a>
+            <a class="button button-secondary" href="/assets/Sirija_Boinapally_Resume.pdf" target="_blank" rel="noreferrer">View resume ↓</a>
+          </div>
+          <div class="social-row">
+            <a href="https://github.com/boinapallysirija" target="_blank" rel="noreferrer">GitHub ↗</a>
+            <a href="https://linkedin.com/in/sirijaboinapally" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+            <a href="mailto:boinapallysirija@gmail.com">Email ↗</a>
+          </div>
+        </div>
+        <div class="hero-art reveal" aria-label="Decorative abstract technology illustration">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div>
+          <div class="art-grid"></div>
+          <div class="code-card">
+            <div class="code-top"><i></i><i></i><i></i><span>sirija.dev</span></div>
+            <div class="code-lines">
+              <p><b>const</b> developer = {</p>
+              <p class="indent">name: <em>"Sirija"</em>,</p>
+              <p class="indent">focus: [</p>
+              <p class="indent2"><em>"AI & ML"</em>,</p>
+              <p class="indent2"><em>"Full-stack"</em></p>
+              <p class="indent">],</p>
+              <p class="indent">mindset: <em>"Always learning"</em></p>
+              <p>};</p>
+            </div>
+            <div class="code-footer"><span class="status-dot"></span> Building · Learning · Improving</div>
+          </div>
+          <div class="floating-chip chip-a">✦ Machine Learning</div>
+          <div class="floating-chip chip-b">⌘ React & Python</div>
+          <div class="hero-glow"></div>
+        </div>
+        <a class="scroll-cue" href="#about">SCROLL TO EXPLORE <span>↓</span></a>
+      </section>
 
-<section id="about">
-  <div class="heading"><span class="num">// 01</span> About</div>
-  <div class="about-box">
-    <b>Sirija Boinapally</b><br>
-    <span class="green">Role: "Computer Science student specializing in AI & ML"</span>
-    Focus: <span class="highlight">"Artificial Intelligence", "Web Development", "Problem Solving"</span><br>
-    Currently exploring: <span class="highlight">"Generative AI", "Modern Development Tools", "Building Real-World Projects"</span><br>
-    <span class="green">About: "I am a curious learner who enjoys exploring technology and turning ideas into practical projects. I believe the best way to learn is by building, experimenting, and continuously improving."</span>
-  </div>
-</section>
+      <section class="section soft-section" id="about">
+        <div class="wrap">
+          <div class="section-heading reveal"><p class="section-label">01 / ABOUT</p><h2>A curious builder.<br><span class="gradient-text">A practical problem-solver.</span></h2></div>
+          <div class="about-grid">
+            <div class="about-text reveal">
+              <p>I’m pursuing a B.Tech in Computer Science and Engineering, specializing in Artificial Intelligence and Machine Learning at <strong>BVRIT Hyderabad College of Engineering for Women</strong>.</p>
+              <p>I enjoy building useful projects that solve real problems. Alongside learning AI and ML, I’m exploring full-stack web development and improving my skills by working on projects rather than only studying concepts.</p>
+              <p>My work includes RoadSoS, a smart emergency road assistance concept; JalSlot, a water-pump usage predictor; GramSathiAI, a multilingual rural healthcare assistant; and interactive web applications.</p>
+              <p>I value collaboration, curiosity and continuous learning, and I’m interested in opportunities where I can contribute while growing as a developer.</p>
+            </div>
+            <div class="about-facts reveal">
+              <div class="fact-card"><span class="fact-icon">⌁</span><div><b>Education</b><small>B.Tech CSE – AIML</small></div></div>
+              <div class="fact-card"><span class="fact-icon">⌖</span><div><b>Location</b><small>Hyderabad, Telangana</small></div></div>
+              <div class="fact-card"><span class="fact-icon">✧</span><div><b>Interests</b><small>AI/ML · Full-stack · Problem solving</small></div></div>
+              <div class="fact-card"><span class="fact-icon">↗</span><div><b>Currently</b><small>Learning, building and exploring</small></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="skills">
-  <div class="heading"><span class="num">// 02</span> Skills</div>
-  <div class="skills">
-    <span class="skill">Python</span><span class="skill">C</span><span class="skill">HTML</span>
-    <span class="skill">CSS</span><span class="skill">JavaScript</span><span class="skill">React</span>
-    <span class="skill">SQL</span><span class="skill">Git & GitHub</span><span class="skill">Generative AI</span>
-    <span class="skill">Prompt Engineering</span><span class="skill">VS Code</span>
-  </div>
-</section>
+      <section class="section wrap" id="skills">
+        <div class="section-heading reveal"><p class="section-label">02 / TOOLKIT</p><h2>Technologies I <span class="gradient-text">work with.</span></h2><p class="section-intro">A growing toolkit built through coursework, projects and experimentation.</p></div>
+        <div class="skill-grid">
+          <article class="skill-card reveal"><div class="skill-icon">⌘</div><h3>Programming</h3><div class="tags"><span>Python</span><span>C</span><span>Java</span><span>JavaScript</span><span>SQL</span></div></article>
+          <article class="skill-card reveal"><div class="skill-icon">▧</div><h3>Web development</h3><div class="tags"><span>HTML</span><span>CSS</span><span>React</span><span>Node.js</span><span>Express</span><span>Flask</span></div></article>
+          <article class="skill-card reveal"><div class="skill-icon">✧</div><h3>AI & data</h3><div class="tags"><span>Machine Learning</span><span>Generative AI</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span></div></article>
+          <article class="skill-card reveal"><div class="skill-icon">◈</div><h3>Tools & platforms</h3><div class="tags"><span>Git</span><span>GitHub</span><span>VS Code</span><span>Firebase</span><span>MySQL</span><span>Vercel</span></div></article>
+          <article class="skill-card reveal"><div class="skill-icon">◎</div><h3>Core concepts</h3><div class="tags"><span>DSA</span><span>OOP</span><span>DBMS</span><span>REST APIs</span><span>Responsive design</span></div></article>
+          <article class="skill-card skill-note reveal"><p class="section-label">ALWAYS LEARNING</p><h3>New tools, new ideas, better solutions.</h3><p>I keep expanding my toolkit by experimenting with technologies and applying them in practical projects.</p></article>
+        </div>
+      </section>
 
-<section id="projects">
-  <div class="heading"><span class="num">// 03</span> Projects</div>
-  <div class="project-grid">
-    <div class="project-card"><h3>🌾 GramSathiAI</h3><p>An AI-focused solution designed around real-world community and rural needs.</p><div class="project-links"><a href="https://gram-sathi-ai-zeta.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>🎙️ Voice Agent</h3><p>A voice-based AI application exploring conversational and interactive technologies.</p><div class="project-links"><a href="https://murf-livekit-starter-kappa.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>🚑 RoadSoS</h3><p>A smart emergency road assistance system with SOS support and emergency guidance.</p><div class="project-links"><a href="https://roadsos-ch.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>💎 GIVA Clone</h3><p>A responsive e-commerce frontend project inspired by GIVA.</p><div class="project-links"><a href="https://giva-clone.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>🌐 Language Translation Tool</h3><p>A web application that helps users translate text between languages.</p><div class="project-links"><a href="https://code-alpha-language-translation-too-chi.vercel.app/" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>💬 FAQ Chatbot</h3><p>An interactive chatbot designed to provide answers to frequently asked questions.</p><div class="project-links"><a href="https://code-alpha-faq-chatbot-kohl.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-    <div class="project-card"><h3>💧 JalSlot</h3><p>A project focused on smarter water-related management and accessibility.</p><div class="project-links"><a href="https://jal-slot.vercel.app" target="_blank">Live Demo ↗</a></div></div>
-  </div>
-</section>
+      <section class="section soft-section" id="projects">
+        <div class="wrap">
+          <div class="section-heading reveal"><p class="section-label">03 / SELECTED WORK</p><h2>Projects built with <span class="gradient-text">purpose.</span></h2><p class="section-intro">A selection of applications and experiments I’ve worked on. Explore the source code or try the live demos.</p></div>
+          <div class="filter-row reveal" id="projectFilters">
+            <button class="filter active" data-filter="all">All projects</button><button class="filter" data-filter="ai">AI & ML</button><button class="filter" data-filter="web">Web development</button><button class="filter" data-filter="systems">Systems</button>
+          </div>
+          <div class="project-grid" id="projectGrid"></div>
+          <p class="project-footnote">More code and experiments are available on <a href="https://github.com/boinapallysirija" target="_blank" rel="noreferrer">my GitHub profile ↗</a>.</p>
+        </div>
+      </section>
 
-<section class="contact" id="contact">
-  <div class="heading"><span class="num">// 04</span> Contact</div>
-  <h2>Let's build something <span class="highlight">meaningful.</span></h2>
-  <p class="tagline">Explore my work and connect with me on GitHub.</p>
-  <a class="btn" href="https://github.com/boinapallysirija" target="_blank">Visit GitHub ↗</a>
-</section>
-<footer>© 2026 Sirija Boinapally · Built with curiosity and code.</footer>
-</body>
+      <section class="section wrap" id="experience">
+        <div class="section-heading reveal"><p class="section-label">04 / EXPERIENCE</p><h2>Learning by <span class="gradient-text">doing.</span></h2></div>
+        <div class="timeline">
+          <article class="timeline-item reveal"><div class="timeline-date">FEB 2026 — MAY 2026</div><div class="timeline-content"><h3>Python Developer Intern <span>@ AZEvery</span></h3><p>Developed a responsive GIVA-inspired e-commerce website using HTML, CSS and JavaScript. Implemented product search, wishlist and shopping cart functionality, while strengthening debugging and frontend development skills.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">SEP 2026 — PRESENT</div><div class="timeline-content"><h3>Web Creator <span>@ Aivora Club, BVRITH</span></h3><p>Contribute to creating and improving web pages and supporting the club’s online presence and digital activities.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">OCT 2026</div><div class="timeline-content"><h3>Student Coordinator & Hackathon Volunteer <span>@ IEEE Student Branch</span></h3><p>Supported a 24-hour college hackathon through event coordination and participant assistance, collaborating with the organizing team.</p></div></article>
+          <article class="timeline-item reveal"><div class="timeline-date">ONGOING</div><div class="timeline-content"><h3>Student Member <span>@ Rotaract Club</span></h3><p>Participate in student club activities and campus engagement initiatives, building teamwork and coordination experience.</p></div></article>
+        </div>
+      </section>
+
+      <section class="section soft-section" id="achievements">
+        <div class="wrap">
+          <div class="section-heading reveal"><p class="section-label">05 / RECOGNITION</p><h2>Milestones & <span class="gradient-text">certificates.</span></h2><p class="section-intro">A selection of awards, hackathon participation and learning credentials.</p></div>
+          <div class="achievement-grid" id="achievementGrid"></div>
+          <p class="certificate-note">To display certificate scans, add your image files to <code>public/assets/certificates/</code> and set their filenames in <code>src/data.js</code>. Keep verification links where available.</p>
+        </div>
+      </section>
+
+      <section class="section wrap" id="contact">
+        <div class="contact-panel reveal">
+          <div class="contact-orb"></div>
+          <p class="section-label">06 / CONTACT</p>
+          <h2>Have an idea?<br><span class="gradient-text">Let’s build something.</span></h2>
+          <p>I’m always interested in connecting with fellow developers, learning from new perspectives and exploring meaningful opportunities.</p>
+          <a class="button button-primary" href="mailto:boinapallysirija@gmail.com">Say hello ↗</a>
+          <div class="contact-links"><a href="mailto:boinapallysirija@gmail.com">Email</a><a href="https://linkedin.com/in/sirijaboinapally" target="_blank" rel="noreferrer">LinkedIn</a><a href="https://github.com/boinapallysirija" target="_blank" rel="noreferrer">GitHub</a></div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer wrap"><a class="brand" href="#home">S<span>.</span></a><p>© <span id="year"></span> Sirija Boinapally · Built with curiosity and code.</p><a href="#home">Back to top ↑</a></footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
